@@ -26,7 +26,8 @@ def message(data, bufferp, tm, tags, display, is_hilight, prefix, msg):
         mes = '<' + nick_that_sent_message(tags.split(','), prefix) + '>: '  +msg
         if weechat.buffer_get_string(bufferp, 'localvar_type') != 'private':
             mes =  weechat.buffer_get_string(bufferp, 'short_name') + ': ' + mes
-        bot.send_message(chat_id=SET CHAT ID, text=mes)
+        for i in range(0,10):
+            bot.send_message(chat_id=SET CHAT ID, text=mes)
     return weechat.WEECHAT_RC_OK
 
 weechat.hook_print("", "", "", 1, "message", "") # catch all messages
